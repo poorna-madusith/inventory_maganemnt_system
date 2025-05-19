@@ -1,0 +1,48 @@
+<div class="row mx-3 py-3">
+    <h5>Customer</h5>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="row py-3">
+            <div class="col">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f['customerId'].errors}" placeholder="Customer Id" aria-label="Customer Id" formControlName="customerId">
+                <div *ngIf="submitted && formErrors['customerId']" class="invalid-feedback">
+                    {{ formErrors['customerId'] }}
+                </div>
+            </div>
+            <div class="col">
+                <input type="date" class="form-control" [ngClass]="{'is-invalid': submitted && f['registrationDate'].errors}" placeholder="Registration Date" aria-label="Registration Date" formControlName="registrationDate">
+                <div *ngIf="submitted && formErrors['registrationDate']" class="invalid-feedback">
+                    {{ formErrors['registrationDate'] }}
+                </div>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f['firstName'].errors}" placeholder="First name" aria-label="First name" formControlName="firstName">
+                <div *ngIf="submitted && formErrors['firstName']" class="invalid-feedback">
+                    {{ formErrors['firstName'] }}
+                </div>
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f['lastName'].errors}" placeholder="Last name" aria-label="Last name" formControlName="lastName">
+                <div *ngIf="submitted && formErrors['lastName']" class="invalid-feedback">
+                    {{ formErrors['lastName'] }}
+                </div>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && f['phone'].errors}" placeholder="Phone Number" aria-label="Phone Number" formControlName="phone">
+                <div *ngIf="submitted && formErrors['phone']" class="invalid-feedback">
+                    {{ formErrors['phone'] }}
+                </div>
+            </div>
+            <div class="col">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': submitted && f['email'].errors}" placeholder="Email" aria-label="Email" formControlName="email">
+                <div *ngIf="submitted && formErrors['email']" class="invalid-feedback">
+                    {{ formErrors['email'] }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">{{btntext}}</button>
+    </form>
+</div>
